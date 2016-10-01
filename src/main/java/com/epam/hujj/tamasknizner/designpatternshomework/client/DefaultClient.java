@@ -1,40 +1,41 @@
 package com.epam.hujj.tamasknizner.designpatternshomework.client;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.epam.hujj.tamasknizner.designpatternshomework.product.Product;
 
 public class DefaultClient implements Client {
 
-    private int happiness;
-    private String name;
+	private static final Logger LOGGER = LoggerFactory.getLogger(DefaultClient.class);
 
-    public DefaultClient(int happiness, String name) {
-        this.happiness = happiness;
-        this.name = name;
-    }
+	private double happiness;
+	private String name;
 
-    public DefaultClient(String name) {
-        this(0, name);
-    }
+	public DefaultClient(double happiness, String name) {
+		this.happiness = happiness;
+		this.name = name;
+	}
 
-    @Override
-    public void consume(Product product) {
-        // TODO Auto-generated method stub
+	public DefaultClient(String name) {
+		this(0, name);
+	}
 
-    }
+	public void consume(Product product) {
+		LOGGER.info("Product {} is consumed, activating effect...", product.getName());
 
-    @Override
-    public int getHappiness() {
-        return happiness;
-    }
+	}
 
-    @Override
-    public void setHappiness(int happiness) {
-        this.happiness = happiness;
-    }
+	public double getHappiness() {
+		return happiness;
+	}
 
-    @Override
-    public String getName() {
-        return name;
-    }
+	public void setHappiness(double happiness) {
+		this.happiness = happiness;
+	}
+
+	public String getName() {
+		return name;
+	}
 
 }

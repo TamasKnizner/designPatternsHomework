@@ -4,12 +4,12 @@ import com.epam.hujj.tamasknizner.designpatternshomework.product.Product;
 
 public interface Client {
 
-    void consume(Product product);
+	void consume(Product product);
 
-    int getHappiness();
+	double getHappiness();
 
-    void setHappiness(int happiness);
+	void setHappiness(double happiness);
 
-    String getName();
+	String getName();
 
 }

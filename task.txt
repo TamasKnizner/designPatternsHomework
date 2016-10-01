@@ -1,0 +1,30 @@
+Simulate the workflow of a restaurant
+Workflow
+- Client orders a product
+- The orders are prepared by a robot one after another (FIFO)
+- The client receives and consumes the products
+
+Products 
+- The restaurant sells hot dogs and chips
+- Extras for the products: ketchup, mustard
+- Hot dog increases client happiness by 2
+- Chips increases client happiness by 5%
+- Ketchup doubles the effect of a product
+- Mustard increases client happiness by 1 
+	and removes the effect of the product
+- We will introduce new products and extras 
+	(with different effects) in the near future
+
+Other informations
+- We don’t expect other changes in the future
+- Hand in (email)
+- Source code
+- Tests
+
+For each design pattern: Where did you use it and why
+
+Az étel az egy absztrakció, ennek attribútuma, pl. hogy milyen fajta.
+Egy extra az ugye olyan, mint egy decorator… az, 
+hogy éppen azt az extrát hogy hívják, és milyen színű, 
+az szintén attribútum.
+A termékeket nyilván builderrel készítjük.
