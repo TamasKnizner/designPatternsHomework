@@ -1,15 +1,13 @@
 package com.epam.hujj.tamasknizner.designpatternshomework.client;
 
-import com.epam.hujj.tamasknizner.designpatternshomework.product.Product;
+import com.epam.hujj.tamasknizner.designpatternshomework.product.food.Food;
 
 public interface Client {
 
-	void consume(Product product);
+    void consume(Food food);
 
-	double getHappiness();
+    double getHappiness();
 
-	void setHappiness(double happiness);
-
-	String getName();
+    String getName();
 
 }

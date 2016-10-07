@@ -5,28 +5,30 @@ import java.util.LinkedList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.epam.hujj.tamasknizner.designpatternshomework.product.Product;
+import com.epam.hujj.tamasknizner.designpatternshomework.client.Client;
+import com.epam.hujj.tamasknizner.designpatternshomework.order.Order;
+import com.epam.hujj.tamasknizner.designpatternshomework.product.food.Food;
 
 public class Robot {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(Robot.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Robot.class);
 
-	private LinkedList<Product> orders;
+    private LinkedList<Order> orders;
 
-	public Robot() {
-		this.orders = new LinkedList<>();
-		LOGGER.info("Robot initialized");
-	}
+    public Robot() {
+        this.orders = new LinkedList<>();
+        LOGGER.info("Robot initialized");
+    }
 
-	public void takeOrder(Product product) {
-		LOGGER.info("New order in queue: {}", product.toString());
-		orders.add(product);
-	}
+    public void takeOrder(Food food, Client client) {
+        LOGGER.info("New order in queue: {} for {}.", food.getName(), client.getName());
+        orders.add(new Order(food, client));
+    }
 
-	public Product serve() {
-		Product productToServe = orders.removeFirst();
-		LOGGER.info("Serving product: {}", productToServe.toString());
-		return productToServe;
-	}
+    public void serve() {
+        Order foodToServe = orders.removeFirst();
+        LOGGER.info("Serving product: {}.", foodToServe);
+        foodToServe.getClient().consume(foodToServe.getFood());
+    }
 
 }
